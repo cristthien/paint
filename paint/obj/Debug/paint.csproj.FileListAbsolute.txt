@@ -10,3 +10,4 @@ C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.CoreCompileInputs
 C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.CopyComplete
 C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.exe
 C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.pdb
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.Form1.resources
