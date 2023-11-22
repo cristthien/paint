@@ -16,7 +16,7 @@ namespace paint.Shapes
         public Color color;
         public int size;
         public Pen pen;
-        public bool isPoint1 =false;
+        public int clickedResizePoint=-1;
 
         #endregion
 
@@ -42,13 +42,14 @@ namespace paint.Shapes
         public abstract Cursor ChangeCursor(Point location);
         public abstract bool IsResizePioint(Point location);
         public abstract bool IsInsideShape(Point location);
-        public abstract void IsPoint1(Point location);
+        public abstract void ChangeSize(Point location);
+        public abstract void DetectPoint(Point location);
 
 
-            #endregion
+        #endregion
 
 
 
 
-        }
+    }
 }

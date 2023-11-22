@@ -89,6 +89,7 @@ namespace paint
             this.oval_btn.TabIndex = 12;
             this.oval_btn.Text = "oval";
             this.oval_btn.UseVisualStyleBackColor = true;
+            this.oval_btn.Click += new System.EventHandler(this.oval_btn_Click);
             // 
             // circle_btn
             // 
@@ -100,6 +101,7 @@ namespace paint
             this.circle_btn.TabIndex = 13;
             this.circle_btn.Text = "circle";
             this.circle_btn.UseVisualStyleBackColor = true;
+            this.circle_btn.Click += new System.EventHandler(this.circle_btn_Click);
             // 
             // paintFunction_pnl
             // 
@@ -136,6 +138,7 @@ namespace paint
             this.rectangle_btn.Size = new System.Drawing.Size(30, 28);
             this.rectangle_btn.TabIndex = 11;
             this.rectangle_btn.UseVisualStyleBackColor = true;
+            this.rectangle_btn.Click += new System.EventHandler(this.rectangle_btn_Click);
             // 
             // square_btn
             // 
@@ -148,6 +151,7 @@ namespace paint
             this.square_btn.Size = new System.Drawing.Size(30, 28);
             this.square_btn.TabIndex = 10;
             this.square_btn.UseVisualStyleBackColor = true;
+            this.square_btn.Click += new System.EventHandler(this.square_btn_Click);
             // 
             // star_btn
             // 
@@ -160,6 +164,7 @@ namespace paint
             this.star_btn.Size = new System.Drawing.Size(30, 28);
             this.star_btn.TabIndex = 16;
             this.star_btn.UseVisualStyleBackColor = true;
+            this.star_btn.Click += new System.EventHandler(this.star_btn_Click);
             // 
             // pentagon_btn
             // 
@@ -172,6 +177,7 @@ namespace paint
             this.pentagon_btn.Size = new System.Drawing.Size(30, 28);
             this.pentagon_btn.TabIndex = 15;
             this.pentagon_btn.UseVisualStyleBackColor = true;
+            this.pentagon_btn.Click += new System.EventHandler(this.pentagon_btn_Click);
             // 
             // triangle_btn
             // 

@@ -78,10 +78,13 @@ namespace paint
             if (status.IsDrawingNormalShape && !status.IsSelectedShape) {
                 
                 oldBmp = (Bitmap)bmp.Clone();
+
                 currShape.p1 = e.Location;
                 currShape.p2 = e.Location;
                 currShape.pen = pen;
+
                 status.IsChangingShape = true;
+
                 TestBox.Text = "MouseDown";
 
             } else if (status.IsSelectedShape) {
@@ -89,7 +92,7 @@ namespace paint
 
                 if (this.Cursor == Cursors.SizeNS)
                 {
-                    currShape.IsPoint1(e.Location);
+                    currShape.DetectPoint(e.Location);
                     status.IsResizeMouseDown = true;
                 } else if (this.Cursor ==Cursors.SizeAll) {
                     status.IsMovingMouseDown = true;
@@ -101,9 +104,10 @@ namespace paint
                     status.IsSelectedShape = false;
                     bmp = (Bitmap)oldBmp.Clone();
                     g = Graphics.FromImage(bmp);
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
                     currShape.DrawShape(g);
                     oldBmp = (Bitmap)bmp.Clone();
-                    currShape.p1 = e.Location;
+                    currShape.p1 = e.Location; 
                     currShape.p2 = e.Location;
                     currShape.pen = pen;
                     status.IsChangingShape = true;
@@ -124,15 +128,9 @@ namespace paint
             } else if (status.IsSelectedShape) {
                 this.Cursor = currShape.ChangeCursor(e.Location);
                 if (status.IsResizeMouseDown) {
-
-                    if (currShape.isPoint1)
-                    {
-                        currShape.p1 = e.Location;
-                    }
-                    else {
-                        currShape.p2 = e.Location;
-                    }
-                } else if (status.IsMovingMouseDown)
+                    currShape.ChangeSize(e.Location); 
+                }
+                else if (status.IsMovingMouseDown)
                 {
                     Point P1 = currShape.p1;
                     Point P2 = currShape.p2;
@@ -154,17 +152,21 @@ namespace paint
         private void drawArea_MouseUp(object sender, MouseEventArgs e)
         {
             
-            g.SmoothingMode = SmoothingMode.AntiAlias;
             if ((status.IsDrawingNormalShape && status.IsChangingShape) || status.IsResizeMouseDown) {
                 g = Graphics.FromImage(bmp);
-                if (currShape.isPoint1)
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                // Xu ly lai cho nay 
+
+                if (status.IsDrawingNormalShape && status.IsChangingShape)
                 {
-                    currShape.p1 = e.Location;
-                }
-                else
-                {
+
                     currShape.p2 = e.Location;
                 }
+                else {
+                    currShape.ChangeSize(e.Location);
+                
+                }
+
 
                 currShape.DrawShape(g);
 
@@ -178,7 +180,8 @@ namespace paint
 
             } else if (status.IsMovingMouseDown) {
                 g = Graphics.FromImage(bmp);
-                g.DrawLine(currShape.pen, currShape.p1, currShape.p2);
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                currShape.DrawShape(g);
                 TestBox.Text = "Mouseup";
                 currShape.DrawResizePoint(g);
                 status.IsMovingMouseDown = !status.IsMovingMouseDown;
@@ -191,6 +194,7 @@ namespace paint
         // line
         private void line_btn_Click(object sender, EventArgs e)
         {
+            
             currShape = new Line(Point.Empty, Point.Empty,currColor, penSize);
             TestBox.Text = "Line";
             status.IsDrawingNormalShape = true;
@@ -218,6 +222,48 @@ namespace paint
             bmp = (Bitmap)oldBmp.Clone();
             g = Graphics.FromImage(bmp);
             drawArea.Image = bmp;
+        }
+
+        private void rectangle_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Rectangles(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Rectangle";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void square_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Squares(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Square";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void oval_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Ellip(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Ellip";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void circle_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Cir(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Circle";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void star_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Trigonal(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Trigonal";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void pentagon_btn_Click(object sender, EventArgs e)
+        {
+            currShape = new Hexagon(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Hexagon";
+            status.IsDrawingNormalShape = true;
         }
     }
 }

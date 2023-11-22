@@ -27,6 +27,34 @@ namespace paint.Shapes
             }
         }
 
+        public override void ChangeSize(Point location)
+        {
+            if (clickedResizePoint == 0)
+            {
+                p1 = location;
+            }
+            else {
+                p2 = location;
+            }
+        }
+
+        public override void DetectPoint(Point location)
+        {
+            if(location.X < p1.X + size
+                 && location.X > p1.X - size
+                 && location.Y < p1.Y + size
+                 && location.Y > p1.Y - size)
+
+
+            {
+                clickedResizePoint = 0;
+            }
+            else
+            {
+                clickedResizePoint = 1;
+            }
+        }
+
         public override void DrawResizePoint(Graphics g)
         {
             SolidBrush brush = new SolidBrush(Color.Red);
@@ -48,20 +76,7 @@ namespace paint.Shapes
             g.AddLine(p1, p2);
             return g.IsOutlineVisible(location, pen);
         }
-        public override void IsPoint1(Point location) {
-            if (location.X < p1.X + size
-                 && location.X > p1.X - size
-                 && location.Y < p1.Y + size
-                 && location.Y > p1.Y - size) 
-                 
-            {
-                isPoint1 = true;
-            }
-            else
-            {
-                isPoint1 = false;
-            }
-        }
+        
 
         public override bool IsResizePioint(Point location)
         {
