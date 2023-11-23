@@ -448,7 +448,8 @@ namespace paint
         private void LinenColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Linen;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
@@ -463,7 +464,8 @@ namespace paint
         private void whiteColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.White;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
 
         }
@@ -471,28 +473,32 @@ namespace paint
         private void button5_Click(object sender, EventArgs e)
         {
             currColor = Color.LightPink;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void grayColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Gray;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             currColor = Color.Silver;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void LavenderBlushColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.LavenderBlush;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
 
         }
@@ -500,7 +506,8 @@ namespace paint
         private void dimGrayColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.DimGray;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
 
         }
@@ -508,7 +515,8 @@ namespace paint
         private void FireBrickColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Firebrick;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
 
         }
@@ -516,29 +524,39 @@ namespace paint
         private void IvoryColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Ivory;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void blackColor_btn_Click_1(object sender, EventArgs e)
         {
             currColor = Color.Black;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void TanColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Tan;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
         }
 
         private void LimeColor_btn_Click(object sender, EventArgs e)
         {
             currColor = Color.Lime;
-            presentColor.BackColor = cd.Color;
+            presentColor.BackColor = currColor;
+
             pen.Color = currColor;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            penSize = int.Parse(comboBox1.SelectedItem.ToString());
+            pen.Width = int.Parse(comboBox1.SelectedItem.ToString());
         }
 
         private void btnRestart_Click(object sender, EventArgs e)

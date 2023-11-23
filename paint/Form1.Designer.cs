@@ -34,6 +34,8 @@ namespace paint
             this.oval_btn = new System.Windows.Forms.Button();
             this.circle_btn = new System.Windows.Forms.Button();
             this.paintFunction_pnl = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.rectangle_btn = new System.Windows.Forms.Button();
             this.square_btn = new System.Windows.Forms.Button();
             this.pentagon_btn = new System.Windows.Forms.Button();
@@ -108,6 +110,8 @@ namespace paint
             // 
             this.paintFunction_pnl.BackColor = System.Drawing.Color.White;
             this.paintFunction_pnl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.paintFunction_pnl.Controls.Add(this.label1);
+            this.paintFunction_pnl.Controls.Add(this.comboBox1);
             this.paintFunction_pnl.Controls.Add(this.oval_btn);
             this.paintFunction_pnl.Controls.Add(this.circle_btn);
             this.paintFunction_pnl.Controls.Add(this.rectangle_btn);
@@ -124,6 +128,33 @@ namespace paint
             this.paintFunction_pnl.Name = "paintFunction_pnl";
             this.paintFunction_pnl.Size = new System.Drawing.Size(81, 281);
             this.paintFunction_pnl.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Pen Size";
+            // 
+            // comboBox1
+            // 
+            
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "5",
+            "10"});
+            this.comboBox1.Location = new System.Drawing.Point(2, 226);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(72, 21);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+
             // 
             // rectangle_btn
             // 
@@ -541,6 +572,7 @@ namespace paint
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PainInTheAss";
             this.paintFunction_pnl.ResumeLayout(false);
+            this.paintFunction_pnl.PerformLayout();
             this.FileEdit_pnl.ResumeLayout(false);
             this.color_pnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.presentColor)).EndInit();
@@ -589,6 +621,8 @@ namespace paint
         private System.Windows.Forms.Label TestBox;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Button color_panel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
