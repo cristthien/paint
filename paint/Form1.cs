@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,14 @@ namespace paint
         Shape currShape;
         Bitmap oldBmp;
         Point changePosition;
+        ColorDialog cd;
+
+
+
+        Pen eraser;
+        int index;
+        bool PenPaint = false;
+        Point px, py;
         #endregion
 
         public Form1()
@@ -38,13 +47,25 @@ namespace paint
             drawArea.Image = bmp;
             g = Graphics.FromImage(bmp);
             oldBmp = new Bitmap(drawArea.Width, drawArea.Height);
-            changePosition= Point.Empty;
+            changePosition = Point.Empty;
+            cd = new ColorDialog();
+            eraser = new Pen(Color.White, 10);
+            index=0;
+            PenPaint = false;
+
 
         }
-        private void ExistDrawingMode() {
+        private void ExistDrawingShapeMode() {
             status.Reset();
             currShape = null;
-        
+        }
+        private void ChangeFunction()
+        {
+            bmp = (Bitmap)oldBmp.Clone();
+            g = Graphics.FromImage(bmp);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            currShape.DrawShape(g);
+            oldBmp = (Bitmap)bmp.Clone();
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -59,7 +80,14 @@ namespace paint
 
         private void pencil_btn_Click(object sender, EventArgs e)
         {
-
+            if (currShape == null)
+            {
+                currShape = new Line(Point.Empty, Point.Empty, currColor, penSize);
+            }
+            oldBmp= (Bitmap)bmp.Clone();
+            ChangeFunction();
+            ExistDrawingShapeMode();
+            index = 1;
         }
 
         private void presentColor_Click(object sender, EventArgs e)
@@ -102,11 +130,7 @@ namespace paint
                 }
                 else {
                     status.IsSelectedShape = false;
-                    bmp = (Bitmap)oldBmp.Clone();
-                    g = Graphics.FromImage(bmp);
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
-                    currShape.DrawShape(g);
-                    oldBmp = (Bitmap)bmp.Clone();
+                    ChangeFunction();
                     currShape.p1 = e.Location; 
                     currShape.p2 = e.Location;
                     currShape.pen = pen;
@@ -116,13 +140,33 @@ namespace paint
 
 
                 }
+            }else 
+            {
+                
+                
+                PenPaint = true;
+                py = e.Location;
             }
         }
 
         private void drawArea_MouseMove(object sender, MouseEventArgs e)
         {
-
-            if ((status.IsDrawingNormalShape && status.IsChangingShape))
+            if (PenPaint)
+            {
+                if (index == 1)
+                {
+                    px = e.Location;
+                    g.DrawLine(pen, px, py);
+                    py = px;
+                }
+                if (index == 2)
+                {
+                    px = e.Location;
+                    g.DrawLine(eraser, px, py);
+                    py = px;
+                }
+                
+            } else if ((status.IsDrawingNormalShape && status.IsChangingShape))
             {
                 currShape.p2 = e.Location;
             } else if (status.IsSelectedShape) {
@@ -151,7 +195,7 @@ namespace paint
 
         private void drawArea_MouseUp(object sender, MouseEventArgs e)
         {
-            
+
             if ((status.IsDrawingNormalShape && status.IsChangingShape) || status.IsResizeMouseDown) {
                 g = Graphics.FromImage(bmp);
                 g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -164,7 +208,7 @@ namespace paint
                 }
                 else {
                     currShape.ChangeSize(e.Location);
-                
+
                 }
 
 
@@ -176,7 +220,7 @@ namespace paint
                 status.IsSelectedShape = true;
                 if (status.IsResizeMouseDown) {
                     status.IsResizeMouseDown = !status.IsResizeMouseDown;
-                } 
+                }
 
             } else if (status.IsMovingMouseDown) {
                 g = Graphics.FromImage(bmp);
@@ -187,6 +231,9 @@ namespace paint
                 status.IsMovingMouseDown = !status.IsMovingMouseDown;
 
             }
+            else {
+                PenPaint = false;
+            }
             drawArea.Image = bmp;
 
         }
@@ -194,7 +241,12 @@ namespace paint
         // line
         private void line_btn_Click(object sender, EventArgs e)
         {
-            
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
+
             currShape = new Line(Point.Empty, Point.Empty,currColor, penSize);
             TestBox.Text = "Line";
             status.IsDrawingNormalShape = true;
@@ -217,7 +269,7 @@ namespace paint
 
         private void undo_btn_Click(object sender, EventArgs e)
         {
-            ExistDrawingMode();
+            ExistDrawingShapeMode();
             TestBox.Text = "undo";
             bmp = (Bitmap)oldBmp.Clone();
             g = Graphics.FromImage(bmp);
@@ -226,6 +278,10 @@ namespace paint
 
         private void rectangle_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
             currShape = new Rectangles(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Rectangle";
             status.IsDrawingNormalShape = true;
@@ -233,6 +289,12 @@ namespace paint
 
         private void square_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+                
+            }
+            ExistDrawingShapeMode();
             currShape = new Squares(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Square";
             status.IsDrawingNormalShape = true;
@@ -240,6 +302,12 @@ namespace paint
 
         private void oval_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
+
             currShape = new Ellip(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Ellip";
             status.IsDrawingNormalShape = true;
@@ -247,6 +315,11 @@ namespace paint
 
         private void circle_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
             currShape = new Cir(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Circle";
             status.IsDrawingNormalShape = true;
@@ -254,6 +327,11 @@ namespace paint
 
         private void star_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
             currShape = new Trigonal(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Trigonal";
             status.IsDrawingNormalShape = true;
@@ -261,9 +339,215 @@ namespace paint
 
         private void pentagon_btn_Click(object sender, EventArgs e)
         {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
             currShape = new Hexagon(Point.Empty, Point.Empty, currColor, penSize);
             TestBox.Text = "Hexagon";
             status.IsDrawingNormalShape = true;
+        }
+
+        private void saveFile_btn_Click(object sender, EventArgs e)
+        {
+            var saveImage = new SaveFileDialog();
+            saveImage.Filter = "Image(*.jpg)|*.jpg|(*.*|*.*";
+            if (saveImage.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap btm = bmp.Clone(new Rectangle(0, 0, drawArea.Width, drawArea.Height), bmp.PixelFormat);
+                btm.Save(saveImage.FileName, ImageFormat.Jpeg);
+            }
+        }
+
+        private void eraser_btn_Click(object sender, EventArgs e)
+        {
+            if (currShape == null)
+            {
+                currShape = new Line(Point.Empty, Point.Empty, currColor, penSize);
+            }
+            oldBmp = (Bitmap)bmp.Clone();
+            ChangeFunction();
+            ExistDrawingShapeMode();
+            index = 2;
+        }
+
+        private void drawArea_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (index == 7&& !status.IsDrawingNormalShape)
+            {
+                Point point = set_point(drawArea, e.Location);
+                Fill(bmp, point.X, point.Y, currColor);
+            }
+        }
+        static Point set_point(PictureBox pb, Point pt)
+        {
+            float pX = 1f * pb.Image.Width / pb.Width;
+            float pY = 1f * pb.Image.Height / pb.Height;
+
+            return new Point((int)(pt.X * pX), (int)(pt.Y * pX));
+        }
+        public void Fill(Bitmap bm, int x, int y, Color new_clr)
+        {
+            Color old_color = bmp.GetPixel(x, y);
+            Stack<Point> pixel = new Stack<Point>();
+            pixel.Push(new Point(x, y));
+            bmp.SetPixel(x, y, new_clr);
+
+            if (old_color == new_clr)
+            {
+                return;
+            }
+
+            while (pixel.Count > 0)
+            {
+                Point pt = (Point)pixel.Pop();
+                if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    validate(bm, pixel, pt.X - 1, pt.Y, old_color, new_clr);
+                    validate(bm, pixel, pt.X, pt.Y - 1, old_color, new_clr);
+                    validate(bm, pixel, pt.X + 1, pt.Y, old_color, new_clr);
+                    validate(bm, pixel, pt.X, pt.Y + 1, old_color, new_clr);
+                }
+            }
+        }
+
+        private void formatColorFill_btn_Click(object sender, EventArgs e)
+        {
+            if (currShape == null)
+            {
+                currShape = new Line(Point.Empty, Point.Empty, currColor, penSize);
+            }
+            oldBmp = (Bitmap)bmp.Clone();
+            ChangeFunction();
+            ExistDrawingShapeMode();
+            index = 7;
+        }
+        private void validate(Bitmap bm, Stack<Point> sp, int x, int y, Color old_color, Color new_color)
+        {
+            Color cx = bmp.GetPixel(x, y);
+            if (cx == old_color)
+            {
+                sp.Push(new Point(x, y));
+                bm.SetPixel(x, y, new_color);
+            }
+        }
+
+        private void triangle_btn_Click(object sender, EventArgs e)
+        {
+            if (status.IsSelectedShape)
+            {
+                ChangeFunction();
+            }
+            ExistDrawingShapeMode();
+            currShape = new Trigonal(Point.Empty, Point.Empty, currColor, penSize);
+            TestBox.Text = "Trigonal";
+            status.IsDrawingNormalShape = true;
+        }
+
+        private void LinenColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Linen;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void color_panel_Click(object sender, EventArgs e)
+        {
+            cd.ShowDialog();
+            currColor = cd.Color;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void whiteColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.White;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            currColor = Color.LightPink;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void grayColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Gray;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Silver;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void LavenderBlushColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.LavenderBlush;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+
+        }
+
+        private void dimGrayColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.DimGray;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+
+        }
+
+        private void FireBrickColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Firebrick;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+
+        }
+
+        private void IvoryColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Ivory;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void blackColor_btn_Click_1(object sender, EventArgs e)
+        {
+            currColor = Color.Black;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void TanColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Tan;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void LimeColor_btn_Click(object sender, EventArgs e)
+        {
+            currColor = Color.Lime;
+            presentColor.BackColor = cd.Color;
+            pen.Color = currColor;
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            oldBmp = new Bitmap(drawArea.Width, drawArea.Height);
+            bmp = new Bitmap(drawArea.Width, drawArea.Height);
+            drawArea.Image = bmp;
+            currShape = new Line(Point.Empty, Point.Empty, currColor, penSize);
         }
     }
 }

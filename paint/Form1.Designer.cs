@@ -36,30 +36,29 @@ namespace paint
             this.paintFunction_pnl = new System.Windows.Forms.Panel();
             this.rectangle_btn = new System.Windows.Forms.Button();
             this.square_btn = new System.Windows.Forms.Button();
-            this.star_btn = new System.Windows.Forms.Button();
             this.pentagon_btn = new System.Windows.Forms.Button();
             this.triangle_btn = new System.Windows.Forms.Button();
             this.formatColorFill_btn = new System.Windows.Forms.Button();
             this.line_btn = new System.Windows.Forms.Button();
-            this.borderColor_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.marker_btn = new System.Windows.Forms.Button();
             this.eraser_btn = new System.Windows.Forms.Button();
             this.pencil_btn = new System.Windows.Forms.Button();
             this.FileEdit_pnl = new System.Windows.Forms.Panel();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.undo_btn = new System.Windows.Forms.Button();
             this.saveFile_btn = new System.Windows.Forms.Button();
             this.openFile_btn = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.color_pnl = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.color_panel = new System.Windows.Forms.Button();
+            this.LimeColor_btn = new System.Windows.Forms.Button();
+            this.IvoryColor_btn = new System.Windows.Forms.Button();
+            this.LavenderBlushColor_btn = new System.Windows.Forms.Button();
+            this.LightPinkColor_btn = new System.Windows.Forms.Button();
+            this.TanColor_btn = new System.Windows.Forms.Button();
+            this.FireBrickColor_btn = new System.Windows.Forms.Button();
+            this.sliverColor_btn = new System.Windows.Forms.Button();
             this.LinenColor_btn = new System.Windows.Forms.Button();
             this.blackColor_btn = new System.Windows.Forms.Button();
             this.dimGrayColor_btn = new System.Windows.Forms.Button();
@@ -81,25 +80,27 @@ namespace paint
             // 
             // oval_btn
             // 
+            this.oval_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("oval_btn.BackgroundImage")));
+            this.oval_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.oval_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.oval_btn.Location = new System.Drawing.Point(40, 228);
+            this.oval_btn.Location = new System.Drawing.Point(40, 136);
             this.oval_btn.Margin = new System.Windows.Forms.Padding(2);
             this.oval_btn.Name = "oval_btn";
             this.oval_btn.Size = new System.Drawing.Size(30, 28);
             this.oval_btn.TabIndex = 12;
-            this.oval_btn.Text = "oval";
             this.oval_btn.UseVisualStyleBackColor = true;
             this.oval_btn.Click += new System.EventHandler(this.oval_btn_Click);
             // 
             // circle_btn
             // 
+            this.circle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circle_btn.BackgroundImage")));
+            this.circle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.circle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.circle_btn.Location = new System.Drawing.Point(5, 228);
+            this.circle_btn.Location = new System.Drawing.Point(5, 136);
             this.circle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.circle_btn.Name = "circle_btn";
             this.circle_btn.Size = new System.Drawing.Size(30, 28);
             this.circle_btn.TabIndex = 13;
-            this.circle_btn.Text = "circle";
             this.circle_btn.UseVisualStyleBackColor = true;
             this.circle_btn.Click += new System.EventHandler(this.circle_btn_Click);
             // 
@@ -111,20 +112,17 @@ namespace paint
             this.paintFunction_pnl.Controls.Add(this.circle_btn);
             this.paintFunction_pnl.Controls.Add(this.rectangle_btn);
             this.paintFunction_pnl.Controls.Add(this.square_btn);
-            this.paintFunction_pnl.Controls.Add(this.star_btn);
             this.paintFunction_pnl.Controls.Add(this.pentagon_btn);
             this.paintFunction_pnl.Controls.Add(this.triangle_btn);
             this.paintFunction_pnl.Controls.Add(this.formatColorFill_btn);
             this.paintFunction_pnl.Controls.Add(this.line_btn);
-            this.paintFunction_pnl.Controls.Add(this.borderColor_btn);
             this.paintFunction_pnl.Controls.Add(this.button1);
-            this.paintFunction_pnl.Controls.Add(this.marker_btn);
             this.paintFunction_pnl.Controls.Add(this.eraser_btn);
             this.paintFunction_pnl.Controls.Add(this.pencil_btn);
             this.paintFunction_pnl.Location = new System.Drawing.Point(9, 111);
             this.paintFunction_pnl.Margin = new System.Windows.Forms.Padding(2);
             this.paintFunction_pnl.Name = "paintFunction_pnl";
-            this.paintFunction_pnl.Size = new System.Drawing.Size(81, 318);
+            this.paintFunction_pnl.Size = new System.Drawing.Size(81, 281);
             this.paintFunction_pnl.TabIndex = 4;
             // 
             // rectangle_btn
@@ -132,7 +130,7 @@ namespace paint
             this.rectangle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rectangle_btn.BackgroundImage")));
             this.rectangle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rectangle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rectangle_btn.Location = new System.Drawing.Point(5, 154);
+            this.rectangle_btn.Location = new System.Drawing.Point(5, 104);
             this.rectangle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.rectangle_btn.Name = "rectangle_btn";
             this.rectangle_btn.Size = new System.Drawing.Size(30, 28);
@@ -145,7 +143,7 @@ namespace paint
             this.square_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("square_btn.BackgroundImage")));
             this.square_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.square_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.square_btn.Location = new System.Drawing.Point(40, 154);
+            this.square_btn.Location = new System.Drawing.Point(40, 104);
             this.square_btn.Margin = new System.Windows.Forms.Padding(2);
             this.square_btn.Name = "square_btn";
             this.square_btn.Size = new System.Drawing.Size(30, 28);
@@ -153,25 +151,12 @@ namespace paint
             this.square_btn.UseVisualStyleBackColor = true;
             this.square_btn.Click += new System.EventHandler(this.square_btn_Click);
             // 
-            // star_btn
-            // 
-            this.star_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("star_btn.BackgroundImage")));
-            this.star_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.star_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.star_btn.Location = new System.Drawing.Point(5, 191);
-            this.star_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.star_btn.Name = "star_btn";
-            this.star_btn.Size = new System.Drawing.Size(30, 28);
-            this.star_btn.TabIndex = 16;
-            this.star_btn.UseVisualStyleBackColor = true;
-            this.star_btn.Click += new System.EventHandler(this.star_btn_Click);
-            // 
             // pentagon_btn
             // 
             this.pentagon_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pentagon_btn.BackgroundImage")));
             this.pentagon_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pentagon_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pentagon_btn.Location = new System.Drawing.Point(40, 191);
+            this.pentagon_btn.Location = new System.Drawing.Point(5, 168);
             this.pentagon_btn.Margin = new System.Windows.Forms.Padding(2);
             this.pentagon_btn.Name = "pentagon_btn";
             this.pentagon_btn.Size = new System.Drawing.Size(30, 28);
@@ -184,31 +169,33 @@ namespace paint
             this.triangle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("triangle_btn.BackgroundImage")));
             this.triangle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.triangle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.triangle_btn.Location = new System.Drawing.Point(40, 118);
+            this.triangle_btn.Location = new System.Drawing.Point(39, 72);
             this.triangle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.triangle_btn.Name = "triangle_btn";
             this.triangle_btn.Size = new System.Drawing.Size(30, 28);
             this.triangle_btn.TabIndex = 14;
             this.triangle_btn.UseVisualStyleBackColor = true;
+            this.triangle_btn.Click += new System.EventHandler(this.triangle_btn_Click);
             // 
             // formatColorFill_btn
             // 
             this.formatColorFill_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("formatColorFill_btn.BackgroundImage")));
             this.formatColorFill_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.formatColorFill_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.formatColorFill_btn.Location = new System.Drawing.Point(40, 81);
+            this.formatColorFill_btn.Location = new System.Drawing.Point(39, 40);
             this.formatColorFill_btn.Margin = new System.Windows.Forms.Padding(2);
             this.formatColorFill_btn.Name = "formatColorFill_btn";
             this.formatColorFill_btn.Size = new System.Drawing.Size(30, 28);
             this.formatColorFill_btn.TabIndex = 9;
             this.formatColorFill_btn.UseVisualStyleBackColor = true;
+            this.formatColorFill_btn.Click += new System.EventHandler(this.formatColorFill_btn_Click);
             // 
             // line_btn
             // 
             this.line_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("line_btn.BackgroundImage")));
             this.line_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.line_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.line_btn.Location = new System.Drawing.Point(5, 118);
+            this.line_btn.Location = new System.Drawing.Point(5, 72);
             this.line_btn.Margin = new System.Windows.Forms.Padding(2);
             this.line_btn.Name = "line_btn";
             this.line_btn.Size = new System.Drawing.Size(30, 28);
@@ -216,41 +203,17 @@ namespace paint
             this.line_btn.UseVisualStyleBackColor = true;
             this.line_btn.Click += new System.EventHandler(this.line_btn_Click);
             // 
-            // borderColor_btn
-            // 
-            this.borderColor_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("borderColor_btn.BackgroundImage")));
-            this.borderColor_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.borderColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.borderColor_btn.Location = new System.Drawing.Point(5, 81);
-            this.borderColor_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.borderColor_btn.Name = "borderColor_btn";
-            this.borderColor_btn.Size = new System.Drawing.Size(30, 28);
-            this.borderColor_btn.TabIndex = 8;
-            this.borderColor_btn.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(40, 45);
+            this.button1.Location = new System.Drawing.Point(5, 40);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 28);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // marker_btn
-            // 
-            this.marker_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("marker_btn.BackgroundImage")));
-            this.marker_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.marker_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.marker_btn.Location = new System.Drawing.Point(5, 45);
-            this.marker_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.marker_btn.Name = "marker_btn";
-            this.marker_btn.Size = new System.Drawing.Size(30, 28);
-            this.marker_btn.TabIndex = 6;
-            this.marker_btn.UseVisualStyleBackColor = true;
             // 
             // eraser_btn
             // 
@@ -263,6 +226,7 @@ namespace paint
             this.eraser_btn.Size = new System.Drawing.Size(30, 28);
             this.eraser_btn.TabIndex = 5;
             this.eraser_btn.UseVisualStyleBackColor = true;
+            this.eraser_btn.Click += new System.EventHandler(this.eraser_btn_Click);
             // 
             // pencil_btn
             // 
@@ -283,6 +247,7 @@ namespace paint
             // 
             this.FileEdit_pnl.BackColor = System.Drawing.Color.White;
             this.FileEdit_pnl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.FileEdit_pnl.Controls.Add(this.btnRestart);
             this.FileEdit_pnl.Controls.Add(this.undo_btn);
             this.FileEdit_pnl.Controls.Add(this.saveFile_btn);
             this.FileEdit_pnl.Controls.Add(this.openFile_btn);
@@ -291,6 +256,19 @@ namespace paint
             this.FileEdit_pnl.Name = "FileEdit_pnl";
             this.FileEdit_pnl.Size = new System.Drawing.Size(81, 79);
             this.FileEdit_pnl.TabIndex = 5;
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRestart.BackgroundImage")));
+            this.btnRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestart.Location = new System.Drawing.Point(44, 43);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(30, 28);
+            this.btnRestart.TabIndex = 3;
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // undo_btn
             // 
@@ -316,6 +294,7 @@ namespace paint
             this.saveFile_btn.Size = new System.Drawing.Size(30, 28);
             this.saveFile_btn.TabIndex = 1;
             this.saveFile_btn.UseVisualStyleBackColor = true;
+            this.saveFile_btn.Click += new System.EventHandler(this.saveFile_btn_Click);
             // 
             // openFile_btn
             // 
@@ -333,160 +312,186 @@ namespace paint
             // 
             this.color_pnl.BackColor = System.Drawing.Color.White;
             this.color_pnl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.color_pnl.Controls.Add(this.button8);
-            this.color_pnl.Controls.Add(this.button7);
-            this.color_pnl.Controls.Add(this.button6);
-            this.color_pnl.Controls.Add(this.button5);
-            this.color_pnl.Controls.Add(this.button4);
-            this.color_pnl.Controls.Add(this.button3);
-            this.color_pnl.Controls.Add(this.button2);
+            this.color_pnl.Controls.Add(this.color_panel);
+            this.color_pnl.Controls.Add(this.LimeColor_btn);
+            this.color_pnl.Controls.Add(this.IvoryColor_btn);
+            this.color_pnl.Controls.Add(this.LavenderBlushColor_btn);
+            this.color_pnl.Controls.Add(this.LightPinkColor_btn);
+            this.color_pnl.Controls.Add(this.TanColor_btn);
+            this.color_pnl.Controls.Add(this.FireBrickColor_btn);
+            this.color_pnl.Controls.Add(this.sliverColor_btn);
             this.color_pnl.Controls.Add(this.LinenColor_btn);
             this.color_pnl.Controls.Add(this.blackColor_btn);
             this.color_pnl.Controls.Add(this.dimGrayColor_btn);
             this.color_pnl.Controls.Add(this.grayColor_btn);
             this.color_pnl.Controls.Add(this.whiteColor_btn);
             this.color_pnl.Controls.Add(this.presentColor);
-            this.color_pnl.Location = new System.Drawing.Point(9, 445);
+            this.color_pnl.Location = new System.Drawing.Point(9, 413);
             this.color_pnl.Margin = new System.Windows.Forms.Padding(2);
             this.color_pnl.Name = "color_pnl";
-            this.color_pnl.Size = new System.Drawing.Size(81, 132);
+            this.color_pnl.Size = new System.Drawing.Size(81, 164);
             this.color_pnl.TabIndex = 6;
             // 
-            // button8
+            // color_panel
             // 
-            this.button8.BackColor = System.Drawing.Color.Lime;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Location = new System.Drawing.Point(44, 96);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(16, 15);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = false;
+            this.color_panel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("color_panel.BackgroundImage")));
+            this.color_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.color_panel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.color_panel.Location = new System.Drawing.Point(8, 128);
+            this.color_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.color_panel.Name = "color_panel";
+            this.color_panel.Size = new System.Drawing.Size(42, 30);
+            this.color_panel.TabIndex = 18;
+            this.color_panel.UseVisualStyleBackColor = true;
+            this.color_panel.Click += new System.EventHandler(this.color_panel_Click);
             // 
-            // button7
+            // LimeColor_btn
             // 
-            this.button7.BackColor = System.Drawing.Color.Ivory;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Location = new System.Drawing.Point(45, 76);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(16, 15);
-            this.button7.TabIndex = 12;
-            this.button7.UseVisualStyleBackColor = false;
+            this.LimeColor_btn.BackColor = System.Drawing.Color.Lime;
+            this.LimeColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LimeColor_btn.Location = new System.Drawing.Point(54, 96);
+            this.LimeColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.LimeColor_btn.Name = "LimeColor_btn";
+            this.LimeColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.LimeColor_btn.TabIndex = 13;
+            this.LimeColor_btn.UseVisualStyleBackColor = false;
+            this.LimeColor_btn.Click += new System.EventHandler(this.LimeColor_btn_Click);
             // 
-            // button6
+            // IvoryColor_btn
             // 
-            this.button6.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(45, 57);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(16, 15);
-            this.button6.TabIndex = 11;
-            this.button6.UseVisualStyleBackColor = false;
+            this.IvoryColor_btn.BackColor = System.Drawing.Color.Ivory;
+            this.IvoryColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.IvoryColor_btn.Location = new System.Drawing.Point(54, 77);
+            this.IvoryColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.IvoryColor_btn.Name = "IvoryColor_btn";
+            this.IvoryColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.IvoryColor_btn.TabIndex = 12;
+            this.IvoryColor_btn.UseVisualStyleBackColor = false;
+            this.IvoryColor_btn.Click += new System.EventHandler(this.IvoryColor_btn_Click);
             // 
-            // button5
+            // LavenderBlushColor_btn
             // 
-            this.button5.BackColor = System.Drawing.Color.LightPink;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(45, 37);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(16, 15);
-            this.button5.TabIndex = 10;
-            this.button5.UseVisualStyleBackColor = false;
+            this.LavenderBlushColor_btn.BackColor = System.Drawing.Color.LavenderBlush;
+            this.LavenderBlushColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LavenderBlushColor_btn.Location = new System.Drawing.Point(54, 57);
+            this.LavenderBlushColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.LavenderBlushColor_btn.Name = "LavenderBlushColor_btn";
+            this.LavenderBlushColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.LavenderBlushColor_btn.TabIndex = 11;
+            this.LavenderBlushColor_btn.UseVisualStyleBackColor = false;
+            this.LavenderBlushColor_btn.Click += new System.EventHandler(this.LavenderBlushColor_btn_Click);
             // 
-            // button4
+            // LightPinkColor_btn
             // 
-            this.button4.BackColor = System.Drawing.Color.Tan;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(23, 96);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(16, 15);
-            this.button4.TabIndex = 9;
-            this.button4.UseVisualStyleBackColor = false;
+            this.LightPinkColor_btn.BackColor = System.Drawing.Color.LightPink;
+            this.LightPinkColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LightPinkColor_btn.Location = new System.Drawing.Point(54, 37);
+            this.LightPinkColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.LightPinkColor_btn.Name = "LightPinkColor_btn";
+            this.LightPinkColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.LightPinkColor_btn.TabIndex = 10;
+            this.LightPinkColor_btn.UseVisualStyleBackColor = false;
+            this.LightPinkColor_btn.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button3
+            // TanColor_btn
             // 
-            this.button3.BackColor = System.Drawing.Color.Firebrick;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(24, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(16, 15);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = false;
+            this.TanColor_btn.BackColor = System.Drawing.Color.Tan;
+            this.TanColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.TanColor_btn.Location = new System.Drawing.Point(34, 96);
+            this.TanColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.TanColor_btn.Name = "TanColor_btn";
+            this.TanColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.TanColor_btn.TabIndex = 9;
+            this.TanColor_btn.UseVisualStyleBackColor = false;
+            this.TanColor_btn.Click += new System.EventHandler(this.TanColor_btn_Click);
             // 
-            // button2
+            // FireBrickColor_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(24, 57);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(16, 15);
-            this.button2.TabIndex = 7;
-            this.button2.UseVisualStyleBackColor = false;
+            this.FireBrickColor_btn.BackColor = System.Drawing.Color.Firebrick;
+            this.FireBrickColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FireBrickColor_btn.Location = new System.Drawing.Point(34, 76);
+            this.FireBrickColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.FireBrickColor_btn.Name = "FireBrickColor_btn";
+            this.FireBrickColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.FireBrickColor_btn.TabIndex = 8;
+            this.FireBrickColor_btn.UseVisualStyleBackColor = false;
+            this.FireBrickColor_btn.Click += new System.EventHandler(this.FireBrickColor_btn_Click);
+            // 
+            // sliverColor_btn
+            // 
+            this.sliverColor_btn.BackColor = System.Drawing.Color.Silver;
+            this.sliverColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.sliverColor_btn.Location = new System.Drawing.Point(34, 57);
+            this.sliverColor_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.sliverColor_btn.Name = "sliverColor_btn";
+            this.sliverColor_btn.Size = new System.Drawing.Size(16, 15);
+            this.sliverColor_btn.TabIndex = 7;
+            this.sliverColor_btn.UseVisualStyleBackColor = false;
+            this.sliverColor_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // LinenColor_btn
             // 
             this.LinenColor_btn.BackColor = System.Drawing.Color.Linen;
             this.LinenColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LinenColor_btn.Location = new System.Drawing.Point(24, 37);
+            this.LinenColor_btn.Location = new System.Drawing.Point(28, 38);
             this.LinenColor_btn.Margin = new System.Windows.Forms.Padding(2);
             this.LinenColor_btn.Name = "LinenColor_btn";
             this.LinenColor_btn.Size = new System.Drawing.Size(16, 15);
             this.LinenColor_btn.TabIndex = 6;
             this.LinenColor_btn.UseVisualStyleBackColor = false;
+            this.LinenColor_btn.Click += new System.EventHandler(this.LinenColor_btn_Click);
             // 
             // blackColor_btn
             // 
-            this.blackColor_btn.BackColor = System.Drawing.Color.DimGray;
+            this.blackColor_btn.BackColor = System.Drawing.Color.Black;
             this.blackColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.blackColor_btn.Location = new System.Drawing.Point(2, 96);
+            this.blackColor_btn.Location = new System.Drawing.Point(8, 96);
             this.blackColor_btn.Margin = new System.Windows.Forms.Padding(2);
             this.blackColor_btn.Name = "blackColor_btn";
             this.blackColor_btn.Size = new System.Drawing.Size(16, 15);
             this.blackColor_btn.TabIndex = 5;
             this.blackColor_btn.UseVisualStyleBackColor = false;
+            this.blackColor_btn.Click += new System.EventHandler(this.blackColor_btn_Click_1);
             // 
             // dimGrayColor_btn
             // 
             this.dimGrayColor_btn.BackColor = System.Drawing.Color.DimGray;
             this.dimGrayColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.dimGrayColor_btn.Location = new System.Drawing.Point(3, 76);
+            this.dimGrayColor_btn.Location = new System.Drawing.Point(8, 76);
             this.dimGrayColor_btn.Margin = new System.Windows.Forms.Padding(2);
             this.dimGrayColor_btn.Name = "dimGrayColor_btn";
             this.dimGrayColor_btn.Size = new System.Drawing.Size(16, 15);
             this.dimGrayColor_btn.TabIndex = 4;
             this.dimGrayColor_btn.UseVisualStyleBackColor = false;
+            this.dimGrayColor_btn.Click += new System.EventHandler(this.dimGrayColor_btn_Click);
             // 
             // grayColor_btn
             // 
             this.grayColor_btn.BackColor = System.Drawing.Color.Silver;
             this.grayColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grayColor_btn.Location = new System.Drawing.Point(2, 57);
+            this.grayColor_btn.Location = new System.Drawing.Point(8, 57);
             this.grayColor_btn.Margin = new System.Windows.Forms.Padding(2);
             this.grayColor_btn.Name = "grayColor_btn";
             this.grayColor_btn.Size = new System.Drawing.Size(16, 15);
             this.grayColor_btn.TabIndex = 2;
             this.grayColor_btn.UseVisualStyleBackColor = false;
+            this.grayColor_btn.Click += new System.EventHandler(this.grayColor_btn_Click);
             // 
             // whiteColor_btn
             // 
             this.whiteColor_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.whiteColor_btn.Location = new System.Drawing.Point(3, 37);
+            this.whiteColor_btn.Location = new System.Drawing.Point(8, 38);
             this.whiteColor_btn.Margin = new System.Windows.Forms.Padding(2);
             this.whiteColor_btn.Name = "whiteColor_btn";
             this.whiteColor_btn.Size = new System.Drawing.Size(16, 15);
             this.whiteColor_btn.TabIndex = 1;
             this.whiteColor_btn.UseVisualStyleBackColor = true;
+            this.whiteColor_btn.Click += new System.EventHandler(this.whiteColor_btn_Click);
             // 
             // presentColor
             // 
             this.presentColor.BackColor = System.Drawing.Color.Silver;
-            this.presentColor.Location = new System.Drawing.Point(20, 2);
+            this.presentColor.Location = new System.Drawing.Point(20, 4);
             this.presentColor.Margin = new System.Windows.Forms.Padding(2);
             this.presentColor.Name = "presentColor";
             this.presentColor.Size = new System.Drawing.Size(30, 30);
@@ -505,6 +510,7 @@ namespace paint
             this.drawArea.TabIndex = 0;
             this.drawArea.TabStop = false;
             this.drawArea.Paint += new System.Windows.Forms.PaintEventHandler(this.drawArea_Paint);
+            this.drawArea.MouseClick += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseClick);
             this.drawArea.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseDown);
             this.drawArea.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseMove);
             this.drawArea.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseUp);
@@ -550,9 +556,7 @@ namespace paint
         private System.Windows.Forms.PictureBox drawArea;
         private System.Windows.Forms.Button pencil_btn;
         private System.Windows.Forms.Button eraser_btn;
-        private System.Windows.Forms.Button marker_btn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button borderColor_btn;
         private System.Windows.Forms.Button formatColorFill_btn;
         private System.Windows.Forms.Button square_btn;
         private System.Windows.Forms.Button rectangle_btn;
@@ -560,7 +564,6 @@ namespace paint
         private System.Windows.Forms.Button oval_btn;
         private System.Windows.Forms.Button triangle_btn;
         private System.Windows.Forms.Button pentagon_btn;
-        private System.Windows.Forms.Button star_btn;
         private System.Windows.Forms.Button line_btn;
         private System.Windows.Forms.Button openFile_btn;
         private System.Windows.Forms.Button saveFile_btn;
@@ -576,14 +579,16 @@ namespace paint
         private System.Windows.Forms.Button grayColor_btn;
         private System.Windows.Forms.Button LinenColor_btn;
         private System.Windows.Forms.Button blackColor_btn;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LimeColor_btn;
+        private System.Windows.Forms.Button IvoryColor_btn;
+        private System.Windows.Forms.Button LavenderBlushColor_btn;
+        private System.Windows.Forms.Button LightPinkColor_btn;
+        private System.Windows.Forms.Button TanColor_btn;
+        private System.Windows.Forms.Button FireBrickColor_btn;
+        private System.Windows.Forms.Button sliverColor_btn;
         private System.Windows.Forms.Label TestBox;
+        private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.Button color_panel;
     }
 }
 
