@@ -28,7 +28,6 @@ namespace paint
         Bitmap oldBmp;
         // Shape
         CurrentShape currShape;
-        Point changePosition;
 
         ColorDialog cd;
         private Image i;
@@ -46,7 +45,6 @@ namespace paint
             // Shape
             presentColor.BackColor = penStatus.CurrColor;
             currShape = new CurrentShape(new Line(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-            changePosition = Point.Empty;
             
             // Bitmap 
             bmp = new Bitmap(drawArea.Width, drawArea.Height);
@@ -121,7 +119,7 @@ namespace paint
                     status.IsResizeMouseDown = true;
                 } else if (this.Cursor ==Cursors.SizeAll) {
                     status.IsMovingMouseDown = true;
-                    changePosition = e.Location;
+                    currShape.InitMovingPosition(e.Location);
 
                 }
                 else {
@@ -169,8 +167,7 @@ namespace paint
                 }
                 else if (status.IsMovingMouseDown)
                 {
-                    currShape.MovingShape(e.Location.X - changePosition.X, e.Location.Y - changePosition.Y);
-                    changePosition = e.Location;
+                    currShape.MovingShape(e.Location);
 
 
                 }
@@ -240,22 +237,18 @@ namespace paint
         {
             ChangeIntoShapeFunction();
             currShape = new CurrentShape(new Line(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-            
-
         }
 
         private void rectangle_btn_Click(object sender, EventArgs e)
         {
             ChangeIntoShapeFunction();
-            currShape = new CurrentShape(new Rectangles(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-            
+            currShape = new CurrentShape(new Rectangles(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));   
         }
 
         private void square_btn_Click(object sender, EventArgs e)
         {
             ChangeIntoShapeFunction();
             currShape = new CurrentShape(new Squares(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-            
         }
 
         private void oval_btn_Click(object sender, EventArgs e)
@@ -274,15 +267,13 @@ namespace paint
         private void triangle_btn_Click(object sender, EventArgs e)
         {
             ChangeIntoShapeFunction();
-            currShape = new CurrentShape(new Trigonal(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-             
+            currShape = new CurrentShape(new Trigonal(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));   
         }
 
         private void pentagon_btn_Click(object sender, EventArgs e)
         {
             ChangeIntoShapeFunction();
             currShape = new CurrentShape(new Hexagon(Point.Empty, Point.Empty, penStatus.CurrColor, penStatus.Size));
-             
         }
         #endregion
 

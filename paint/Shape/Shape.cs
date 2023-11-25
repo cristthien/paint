@@ -16,16 +16,18 @@ namespace paint.Shapes
         protected Color color;
         protected int size;
         protected Pen pen;
-        protected int clickedResizePoint=-1;
+        protected int clickedResizePoint = -1;
+        protected Point changePosition;
 
         #endregion
         #region Constructor 
-        public Shape(Point p1, Point p2,Color color, int size ) {
+        public Shape(Point p1, Point p2, Color color, int size) {
             this.p1 = p1;
             this.p2 = p2;
             this.color = color;
             this.size = size;
-            this.pen = new Pen(color,size);
+            this.pen = new Pen(color, size);
+            this.changePosition = Point.Empty;
         }
 
         public Shape() {
@@ -34,6 +36,7 @@ namespace paint.Shapes
             this.size = 3;
             this.color = Color.Black;
             this.pen = new Pen(Color.Black, 3);
+            this.changePosition = Point.Empty;
         }
         #endregion
 
@@ -54,9 +57,25 @@ namespace paint.Shapes
             this.size = (int)pen.Width;
 
         }
+        public void InitMovingPosition(Point location) {
+            this.changePosition = location;
+        
+        }
+        public void MovingShape(Point location)
+        {
+            int distanceX = location.X - changePosition.X;
+            int distanceY = location.Y - changePosition.Y;
+            p1 = new Point(p1.X + distanceX, p1.Y + distanceY);
+            p2 = new Point(p2.X + distanceX, p2.Y + distanceY);
+            changePosition = location;
 
-        public Point P2 { get => p2; set => p2= value; }
-        public Point P1 { get => p1; set => p1 = value; }
+        }
+
+
+        public void UpdateP2(Point location) {
+            this.p2 = location;
+        
+        }
 
 
         #endregion

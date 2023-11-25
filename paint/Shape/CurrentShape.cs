@@ -32,22 +32,21 @@ namespace paint.Shapes
         }
 
         public void UpdateP2(Point location) {
-            shape.P2 = location;
+            shape.UpdateP2(location);
         }
 
         public Cursor ChangeCursor(Point location) {
             return shape.ChangeCursor(location);
         }
-
+        public void InitMovingPosition(Point location ){
+            shape.InitMovingPosition(location);
+        }
         public void ChangeSize(Point location) {
             shape.ChangeSize(location);
         }
 
-        public void MovingShape(int distanceX, int distanceY) {
-            Point P1 = shape.P1;
-            Point P2 = shape.P2;
-            shape.P1 = new Point(P1.X + distanceX, P1.Y + distanceY);
-            shape.P2 = new Point(P2.X + distanceX, P2.Y + distanceY);
+        public void MovingShape(Point  location) {
+            shape.MovingShape(location);
 
         }
         public void DrawShape(Graphics g)

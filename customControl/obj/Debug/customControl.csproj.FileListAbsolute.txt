@@ -4,3 +4,9 @@ C:\Users\thien\source\repos\paint\customControl\obj\Debug\customControl.csproj.A
 C:\Users\thien\source\repos\paint\customControl\obj\Debug\customControl.csproj.CoreCompileInputs.cache
 C:\Users\thien\source\repos\paint\customControl\obj\Debug\customControl.dll
 C:\Users\thien\source\repos\paint\customControl\obj\Debug\customControl.pdb
+C:\Users\thien\Downloads\paint\paint\customControl\bin\Debug\customControl.dll
+C:\Users\thien\Downloads\paint\paint\customControl\bin\Debug\customControl.pdb
+C:\Users\thien\Downloads\paint\paint\customControl\obj\Debug\customControl.csproj.AssemblyReference.cache
+C:\Users\thien\Downloads\paint\paint\customControl\obj\Debug\customControl.csproj.CoreCompileInputs.cache
+C:\Users\thien\Downloads\paint\paint\customControl\obj\Debug\customControl.dll
+C:\Users\thien\Downloads\paint\paint\customControl\obj\Debug\customControl.pdb
