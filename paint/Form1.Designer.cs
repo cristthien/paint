@@ -67,7 +67,6 @@ namespace paint
             this.whiteColor_btn = new System.Windows.Forms.Button();
             this.presentColor = new System.Windows.Forms.PictureBox();
             this.drawArea = new System.Windows.Forms.PictureBox();
-            this.TestBox = new System.Windows.Forms.Label();
             this.paintFunction_pnl.SuspendLayout();
             this.FileEdit_pnl.SuspendLayout();
             this.color_pnl.SuspendLayout();
@@ -525,22 +524,12 @@ namespace paint
             this.drawArea.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseMove);
             this.drawArea.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawArea_MouseUp);
             // 
-            // TestBox
-            // 
-            this.TestBox.AutoSize = true;
-            this.TestBox.Location = new System.Drawing.Point(16, 579);
-            this.TestBox.Name = "TestBox";
-            this.TestBox.Size = new System.Drawing.Size(35, 13);
-            this.TestBox.TabIndex = 7;
-            this.TestBox.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(920, 596);
-            this.Controls.Add(this.TestBox);
             this.Controls.Add(this.color_pnl);
             this.Controls.Add(this.FileEdit_pnl);
             this.Controls.Add(this.paintFunction_pnl);
@@ -557,7 +546,6 @@ namespace paint
             ((System.ComponentModel.ISupportInitialize)(this.presentColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawArea)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -596,7 +584,6 @@ namespace paint
         private System.Windows.Forms.Button TanColor_btn;
         private System.Windows.Forms.Button FireBrickColor_btn;
         private System.Windows.Forms.Button sliverColor_btn;
-        private System.Windows.Forms.Label TestBox;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Button color_panel;
         private System.Windows.Forms.Label label1;

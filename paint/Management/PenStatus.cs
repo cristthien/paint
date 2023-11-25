@@ -9,27 +9,36 @@ namespace paint.Management
 {
     public class PenStatus
     {
+        #region Properties 
         static PenStatus instance;
 
         private Color currColor;
         private int size;
         private Pen pen;
 
+        #endregion
+
+        #region Contructor 
         protected PenStatus() {
             currColor = Color.Black;
             size = 5;
             pen = new Pen(Color.Black, 5);
         }
+        #endregion 
+
+
+        #region  Get Set
 
         public Color CurrColor { get => currColor; set => currColor = value; }
         public int Size { get => size; set => size = value; }
         public Pen Pens { get => pen; set => pen = value; }
         public Color Color { get; internal set; }
+        #endregion
+
+        #region Mothods
 
         public static PenStatus Instance()
         {
-            // Uses lazy initialization.
-            // Note: this is not thread safe.
             if (instance == null)
             {
                 instance = new PenStatus();
@@ -45,6 +54,7 @@ namespace paint.Management
             size = value;
             pen = new Pen(currColor, value);
         }
+        #endregion
 
 
 

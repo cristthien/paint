@@ -19,9 +19,7 @@ namespace paint.Shapes
         protected int clickedResizePoint=-1;
 
         #endregion
-
-        #region Methods
-        // Constructor
+        #region Constructor 
         public Shape(Point p1, Point p2,Color color, int size ) {
             this.p1 = p1;
             this.p2 = p2;
@@ -37,6 +35,9 @@ namespace paint.Shapes
             this.color = Color.Black;
             this.pen = new Pen(Color.Black, 3);
         }
+        #endregion
+
+        #region Methods
         public abstract void DrawShape(Graphics g);
         public abstract void DrawResizePoint(Graphics g);
         public abstract Cursor ChangeCursor(Point location);

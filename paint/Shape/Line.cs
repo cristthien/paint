@@ -11,8 +11,11 @@ namespace paint.Shapes
 {
     public class Line : Shape
     {
+        #region Constructor 
         public Line(Point p1, Point p2, Color color, int size) : base(p1, p2, color, size) { }
-
+        #endregion
+        
+        #region Methods 
         public override Cursor ChangeCursor(Point location)
         {
             if (IsResizePioint(location))
@@ -98,5 +101,6 @@ namespace paint.Shapes
                 return false;
             }
         }
+        #endregion
     }
 }

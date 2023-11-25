@@ -15,7 +15,6 @@ namespace paint.Shapes
             int X, Y;
             int a = Math.Abs(p1.X - p2.X) > Math.Abs(p1.Y - p2.Y) ? Math.Abs(p1.Y - p2.Y) : Math.Abs(p1.X - p2.X);
 
-
             if (p2.X > p1.X)
             {
                 p2.X = p1.X + a;
@@ -27,12 +26,10 @@ namespace paint.Shapes
             if (p2.Y > p1.Y)
             {
                 p2.Y = p1.Y + a;
-
             }
             else
             {
                 p2.Y = p1.Y - a;
-
             }
             X = p1.X > p2.X ? p2.X : p1.X;
             Y = p1.Y > p2.Y ? p2.Y : p1.Y;

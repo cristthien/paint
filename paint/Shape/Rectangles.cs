@@ -11,7 +11,13 @@ namespace paint.Shapes
 {
     public class Rectangles : Shape
     {
+        #region Properties 
         protected Point[] resizePoints = new Point[4];
+        #endregion
+        #region Constructor
+        public Rectangles(Point p1, Point p2, Color color, int size) : base(p1, p2, color, size) { }
+        #endregion
+        #region Methods
         protected void UpdateResizePoint(){
             int X, Y;
             X = p1.X > p2.X ? p2.X : p1.X;
@@ -22,7 +28,6 @@ namespace paint.Shapes
             resizePoints[2] = new Point(X + Math.Abs(p1.X - p2.X), Y + Math.Abs(p1.Y - p2.Y));
         } 
 
-        public Rectangles(Point p1, Point p2, Color color, int size) : base(p1, p2, color, size) { }
 
         public override Cursor ChangeCursor(Point location)
         {
@@ -117,5 +122,6 @@ namespace paint.Shapes
             }
             
         }
+        #endregion
     }
 }

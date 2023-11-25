@@ -8,33 +8,50 @@ namespace paint
 {
     public class Status
     {
+        #region Properties 
         private static Status instance;
 
-        private bool isDrawingNormalShape = false;
-        private bool isChangingShape = false;
-        private bool isSelectedShape = false;
-        private bool isResizeMouseDown = false;
-        private bool isMovingMouseDown = false;
-
-
+        private bool isDrawingNormalShape ;
+        private bool isChangingShape ;
+        private bool isSelectedShape ;
+        private bool isResizeMouseDown;
+        private bool isMovingMouseDown;
+        #endregion
+        #region Constructor 
         private Status()
         {
+            isDrawingNormalShape = false;
+            isChangingShape = false;
+            isSelectedShape = false;
+            isMovingMouseDown = false;
+            isResizeMouseDown = false;
+
+        }
+        #endregion
+
+
+        #region Get Set 
+        public bool IsDrawingNormalShape
+        {
+            get { return isDrawingNormalShape; }
+            set { isDrawingNormalShape = value; }
         }
 
+        public bool IsChangingShape { get => isChangingShape; set => isChangingShape = value; }
+        public bool IsSelectedShape { get => isSelectedShape; set => isSelectedShape = value; }
+       
+        public bool IsResizeMouseDown { get => isResizeMouseDown; set => isResizeMouseDown = value; }
+        public bool IsMovingMouseDown { get => isMovingMouseDown; set => isMovingMouseDown = value; }
+        #endregion
+
+        #region Methods
         public static Status GetInstance()
         {
             if (instance == null)
             {
                 instance = new Status();
             }
-
             return instance;
-        }
-
-        public bool IsDrawingNormalShape
-        {
-            get { return isDrawingNormalShape; }
-            set { isDrawingNormalShape = value; }
         }
         public void Reset()
         {
@@ -44,11 +61,8 @@ namespace paint
             isMovingMouseDown = false;
             isResizeMouseDown = false;
         }
+        #endregion
 
-        public bool IsChangingShape { get => isChangingShape; set => isChangingShape = value; }
-        public bool IsSelectedShape { get => isSelectedShape; set => isSelectedShape = value; }
-       
-        public bool IsResizeMouseDown { get => isResizeMouseDown; set => isResizeMouseDown = value; }
-        public bool IsMovingMouseDown { get => isMovingMouseDown; set => isMovingMouseDown = value; }
+
     }
 }

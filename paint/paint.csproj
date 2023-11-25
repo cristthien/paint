@@ -56,6 +56,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape\Cir.cs" />
+    <Compile Include="Shape\CurrentShape.cs" />
     <Compile Include="Shape\Ellip.cs" />
     <Compile Include="Shape\Hexagon.cs" />
     <Compile Include="Shape\Line.cs" />

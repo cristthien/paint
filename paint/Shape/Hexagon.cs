@@ -15,7 +15,6 @@ namespace paint.Shapes
             int X, Y;
             int a = Math.Abs(p1.X - p2.X) > Math.Abs(p1.Y - p2.Y) ? Math.Abs(p1.Y - p2.Y) : Math.Abs(p1.X - p2.X);
 
-
             if (p2.X > p1.X)
             {
                 p2.X = p1.X + a;
@@ -24,15 +23,14 @@ namespace paint.Shapes
             {
                 p2.X = p1.X - a;
             }
+
             if (p2.Y > p1.Y)
             {
                 p2.Y = p1.Y + a;
-
             }
             else
             {
                 p2.Y = p1.Y - a;
-
             }
             X = p1.X > p2.X ? p2.X : p1.X;
             Y = p1.Y > p2.Y ? p2.Y : p1.Y;
@@ -44,8 +42,6 @@ namespace paint.Shapes
                 new Point(X+(a/2), Y+a),
                 new Point(X, Y+((3*a)/4)),
                 new Point(X,Y+(a/4)),
-
-
             };
             g.DrawPolygon(pen, points);
 
