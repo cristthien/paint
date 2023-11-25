@@ -42,7 +42,6 @@ namespace paint
             this.triangle_btn = new System.Windows.Forms.Button();
             this.formatColorFill_btn = new System.Windows.Forms.Button();
             this.line_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.eraser_btn = new System.Windows.Forms.Button();
             this.pencil_btn = new System.Windows.Forms.Button();
             this.FileEdit_pnl = new System.Windows.Forms.Panel();
@@ -76,16 +75,12 @@ namespace paint
             ((System.ComponentModel.ISupportInitialize)(this.drawArea)).BeginInit();
             this.SuspendLayout();
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // oval_btn
             // 
             this.oval_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("oval_btn.BackgroundImage")));
             this.oval_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.oval_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.oval_btn.Location = new System.Drawing.Point(40, 136);
+            this.oval_btn.Location = new System.Drawing.Point(39, 153);
             this.oval_btn.Margin = new System.Windows.Forms.Padding(2);
             this.oval_btn.Name = "oval_btn";
             this.oval_btn.Size = new System.Drawing.Size(30, 28);
@@ -98,7 +93,7 @@ namespace paint
             this.circle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circle_btn.BackgroundImage")));
             this.circle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.circle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.circle_btn.Location = new System.Drawing.Point(5, 136);
+            this.circle_btn.Location = new System.Drawing.Point(5, 153);
             this.circle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.circle_btn.Name = "circle_btn";
             this.circle_btn.Size = new System.Drawing.Size(30, 28);
@@ -120,7 +115,6 @@ namespace paint
             this.paintFunction_pnl.Controls.Add(this.triangle_btn);
             this.paintFunction_pnl.Controls.Add(this.formatColorFill_btn);
             this.paintFunction_pnl.Controls.Add(this.line_btn);
-            this.paintFunction_pnl.Controls.Add(this.button1);
             this.paintFunction_pnl.Controls.Add(this.eraser_btn);
             this.paintFunction_pnl.Controls.Add(this.pencil_btn);
             this.paintFunction_pnl.Location = new System.Drawing.Point(9, 111);
@@ -132,7 +126,7 @@ namespace paint
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 210);
+            this.label1.Location = new System.Drawing.Point(3, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 19;
@@ -140,7 +134,6 @@ namespace paint
             // 
             // comboBox1
             // 
-            
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
@@ -148,20 +141,18 @@ namespace paint
             "3",
             "5",
             "10"});
-            this.comboBox1.Location = new System.Drawing.Point(2, 226);
+            this.comboBox1.Location = new System.Drawing.Point(2, 240);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(72, 21);
             this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-
             // 
             // rectangle_btn
             // 
             this.rectangle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rectangle_btn.BackgroundImage")));
             this.rectangle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.rectangle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rectangle_btn.Location = new System.Drawing.Point(5, 104);
+            this.rectangle_btn.Location = new System.Drawing.Point(5, 121);
             this.rectangle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.rectangle_btn.Name = "rectangle_btn";
             this.rectangle_btn.Size = new System.Drawing.Size(30, 28);
@@ -174,7 +165,7 @@ namespace paint
             this.square_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("square_btn.BackgroundImage")));
             this.square_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.square_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.square_btn.Location = new System.Drawing.Point(40, 104);
+            this.square_btn.Location = new System.Drawing.Point(40, 121);
             this.square_btn.Margin = new System.Windows.Forms.Padding(2);
             this.square_btn.Name = "square_btn";
             this.square_btn.Size = new System.Drawing.Size(30, 28);
@@ -187,7 +178,7 @@ namespace paint
             this.pentagon_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pentagon_btn.BackgroundImage")));
             this.pentagon_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pentagon_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pentagon_btn.Location = new System.Drawing.Point(5, 168);
+            this.pentagon_btn.Location = new System.Drawing.Point(5, 185);
             this.pentagon_btn.Margin = new System.Windows.Forms.Padding(2);
             this.pentagon_btn.Name = "pentagon_btn";
             this.pentagon_btn.Size = new System.Drawing.Size(30, 28);
@@ -200,7 +191,7 @@ namespace paint
             this.triangle_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("triangle_btn.BackgroundImage")));
             this.triangle_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.triangle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.triangle_btn.Location = new System.Drawing.Point(39, 72);
+            this.triangle_btn.Location = new System.Drawing.Point(39, 89);
             this.triangle_btn.Margin = new System.Windows.Forms.Padding(2);
             this.triangle_btn.Name = "triangle_btn";
             this.triangle_btn.Size = new System.Drawing.Size(30, 28);
@@ -213,7 +204,7 @@ namespace paint
             this.formatColorFill_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("formatColorFill_btn.BackgroundImage")));
             this.formatColorFill_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.formatColorFill_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.formatColorFill_btn.Location = new System.Drawing.Point(39, 40);
+            this.formatColorFill_btn.Location = new System.Drawing.Point(5, 40);
             this.formatColorFill_btn.Margin = new System.Windows.Forms.Padding(2);
             this.formatColorFill_btn.Name = "formatColorFill_btn";
             this.formatColorFill_btn.Size = new System.Drawing.Size(30, 28);
@@ -226,25 +217,13 @@ namespace paint
             this.line_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("line_btn.BackgroundImage")));
             this.line_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.line_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.line_btn.Location = new System.Drawing.Point(5, 72);
+            this.line_btn.Location = new System.Drawing.Point(5, 89);
             this.line_btn.Margin = new System.Windows.Forms.Padding(2);
             this.line_btn.Name = "line_btn";
             this.line_btn.Size = new System.Drawing.Size(30, 28);
             this.line_btn.TabIndex = 17;
             this.line_btn.UseVisualStyleBackColor = true;
             this.line_btn.Click += new System.EventHandler(this.line_btn_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(5, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 28);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // eraser_btn
             // 
@@ -338,6 +317,7 @@ namespace paint
             this.openFile_btn.Size = new System.Drawing.Size(30, 28);
             this.openFile_btn.TabIndex = 0;
             this.openFile_btn.UseVisualStyleBackColor = true;
+            this.openFile_btn.Click += new System.EventHandler(this.openFile_btn_Click);
             // 
             // color_pnl
             // 
@@ -368,7 +348,7 @@ namespace paint
             this.color_panel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("color_panel.BackgroundImage")));
             this.color_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.color_panel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.color_panel.Location = new System.Drawing.Point(8, 128);
+            this.color_panel.Location = new System.Drawing.Point(20, 115);
             this.color_panel.Margin = new System.Windows.Forms.Padding(2);
             this.color_panel.Name = "color_panel";
             this.color_panel.Size = new System.Drawing.Size(42, 30);
@@ -528,7 +508,6 @@ namespace paint
             this.presentColor.Size = new System.Drawing.Size(30, 30);
             this.presentColor.TabIndex = 0;
             this.presentColor.TabStop = false;
-            this.presentColor.Click += new System.EventHandler(this.presentColor_Click);
             // 
             // drawArea
             // 
@@ -588,7 +567,6 @@ namespace paint
         private System.Windows.Forms.PictureBox drawArea;
         private System.Windows.Forms.Button pencil_btn;
         private System.Windows.Forms.Button eraser_btn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button formatColorFill_btn;
         private System.Windows.Forms.Button square_btn;
         private System.Windows.Forms.Button rectangle_btn;

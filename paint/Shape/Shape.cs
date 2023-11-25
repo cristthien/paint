@@ -11,12 +11,12 @@ namespace paint.Shapes
     public abstract class Shape
     {
         #region Properties
-        public Point p1;
-        public Point p2;
-        public Color color;
-        public int size;
-        public Pen pen;
-        public int clickedResizePoint=-1;
+        protected Point p1;
+        protected Point p2;
+        protected Color color;
+        protected int size;
+        protected Pen pen;
+        protected int clickedResizePoint=-1;
 
         #endregion
 
@@ -44,6 +44,18 @@ namespace paint.Shapes
         public abstract bool IsInsideShape(Point location);
         public abstract void ChangeSize(Point location);
         public abstract void DetectPoint(Point location);
+        public void UpdateShape(Point p1, Point p2, Pen pen)
+        {
+            this.p1 = p1;
+            this.p2 = p2;
+            this.pen = new Pen(color, size);
+            this.color = pen.Color;
+            this.size = (int)pen.Width;
+
+        }
+
+        public Point P2 { get => p2; set => p2= value; }
+        public Point P1 { get => p1; set => p1 = value; }
 
 
         #endregion
