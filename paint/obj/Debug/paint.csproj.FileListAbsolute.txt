@@ -1,0 +1,39 @@
+C:\Users\thien\source\repos\paint\paint\bin\Debug\paint.exe.config
+C:\Users\thien\source\repos\paint\paint\bin\Debug\paint.exe
+C:\Users\thien\source\repos\paint\paint\bin\Debug\paint.pdb
+C:\Users\thien\source\repos\paint\paint\bin\Debug\customControl.dll
+C:\Users\thien\source\repos\paint\paint\bin\Debug\customControl.pdb
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.AssemblyReference.cache
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.Properties.Resources.resources
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.GenerateResource.cache
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.CoreCompileInputs.cache
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.csproj.CopyComplete
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.exe
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.pdb
+C:\Users\thien\source\repos\paint\paint\obj\Debug\paint.Form1.resources
+C:\Users\thien\Downloads\paint\paint\paint\bin\Debug\paint.exe.config
+C:\Users\thien\Downloads\paint\paint\paint\bin\Debug\paint.exe
+C:\Users\thien\Downloads\paint\paint\paint\bin\Debug\paint.pdb
+C:\Users\thien\Downloads\paint\paint\paint\bin\Debug\customControl.dll
+C:\Users\thien\Downloads\paint\paint\paint\bin\Debug\customControl.pdb
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.csproj.AssemblyReference.cache
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.Form1.resources
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.Properties.Resources.resources
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.csproj.GenerateResource.cache
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.csproj.CoreCompileInputs.cache
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.csproj.CopyComplete
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.exe
+C:\Users\thien\Downloads\paint\paint\paint\obj\Debug\paint.pdb
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\bin\Debug\paint.exe.config
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\bin\Debug\paint.exe
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\bin\Debug\paint.pdb
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\bin\Debug\customControl.dll
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\bin\Debug\customControl.pdb
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.Form1.resources
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.Properties.Resources.resources
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.csproj.CopyComplete
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.exe
+C:\Users\Dell\Desktop\paint-main (3)\paint-main\paint\obj\Debug\paint.pdb
