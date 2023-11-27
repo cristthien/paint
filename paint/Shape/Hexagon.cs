@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace paint.Shapes
 {
-    public class Hexagon : Rectangles
+    public class Hexagon : Squares
     {
         public Hexagon(Point p1, Point p2, Color color, int siae) : base(p1, p2, color, siae) { }
         public override void DrawShape(Graphics g)
@@ -15,23 +15,7 @@ namespace paint.Shapes
             int X, Y;
             int a = Math.Abs(p1.X - p2.X) > Math.Abs(p1.Y - p2.Y) ? Math.Abs(p1.Y - p2.Y) : Math.Abs(p1.X - p2.X);
 
-            if (p2.X > p1.X)
-            {
-                p2.X = p1.X + a;
-            }
-            else
-            {
-                p2.X = p1.X - a;
-            }
-
-            if (p2.Y > p1.Y)
-            {
-                p2.Y = p1.Y + a;
-            }
-            else
-            {
-                p2.Y = p1.Y - a;
-            }
+            CalculateSquare();
             X = p1.X > p2.X ? p2.X : p1.X;
             Y = p1.Y > p2.Y ? p2.Y : p1.Y;
 
