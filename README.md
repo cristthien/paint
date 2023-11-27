@@ -11,7 +11,7 @@
 https://app.diagrams.net/#G1ljRdvpJybNXLGFpK8DwJzn97SBk3Slc9
 
 ## Reference 
-[https://www.youtube.com/watch?v=ZUF-oW7I9kM&t=7s]
-[https://fonts.google.com/icons]
-[https://www.dofactory.com/net/singleton-design-pattern]
-[https://www.dofactory.com/net/strategy-design-pattern]
+- https://www.youtube.com/watch?v=ZUF-oW7I9kM&t=7s
+* https://fonts.google.com/icons
++ https://www.dofactory.com/net/singleton-design-pattern
+- https://www.dofactory.com/net/strategy-design-pattern
