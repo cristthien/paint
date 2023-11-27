@@ -1,7 +1,7 @@
 
-# paint
+# Paint
 
-##User Interface  
+## User Interface  
 ![image](https://github.com/cristthien/paint/assets/88161199/45395cc5-293b-4393-a485-127a598138ec)
 
 ![image](https://github.com/cristthien/paint/assets/88161199/1e57d26b-f457-498b-8433-c3c9ebf1d4e1)
