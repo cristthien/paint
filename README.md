@@ -1,5 +1,6 @@
 # paint
 
-Thien day ne
+**This is bold text**
+Thien day ne /n 
 thien
 them
